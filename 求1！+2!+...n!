@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	int n = 0;
+	int tem = 1;
+	int sum = 0;
+	scanf("%d", &n);
+	for (int i = 1; i <= n; i++)
+	{
+		tem *= i;
+		sum += tem;
+	}
+	printf("%d的阶乘累加为： %d", n, sum);
+	return 0;
+}
