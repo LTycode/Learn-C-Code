@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+#include<Windows.h>
+#include<stdlib.h>
+int main()
+{
+	//"**********************"
+	//"m********************!"
+	// ...
+	//"my name is changle!!!!"
+	char str1[] = "my name is changle!!!!";
+	char str2[] = "**********************";
+	int left = 0;
+	int right = strlen(str1)-1;//rightz指最后一个元素的下标，求str1的长度，引用strlen();
+	while (left <= right)
+	{
+		str2[left] = str1[left];
+		str2[right]= str1[right];
+		printf("%s", str2);
+		Sleep(1000);//休息一秒
+		system("cls");//执行系统命令的一个函数-cls-清空屏幕
+		left++;
+		right--;
+	}
+	printf("%s", str2);
+	return 0;
+}
