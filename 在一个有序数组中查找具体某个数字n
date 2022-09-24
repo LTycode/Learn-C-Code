@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+	int n = 0;
+	int i;
+	printf("请输入想找的元素: ");
+	scanf("%d", &n);
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+	int sz = sizeof(arr) / sizeof(arr[0]);//计算数组元素个数
+	for ( i = 0; i < sz; i++)
+	{
+		if (n == arr[i])
+		{
+			printf("找到了，下标为： %d", i);
+			break;
+		}
+	}
+	if (i == sz)
+	{
+		printf("找不到目标元素");
+	}
+	return 0;
+}
