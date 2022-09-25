@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+	int a, b, c;
+	printf("请输入三个数字:");
+	scanf("%d%d%d", &a, &b, &c);
+	//int max = a > b? ((a>c)?a:c): ((b > c) ? b : c);
+	//int min=a<b? ((a < c) ? a : c) : ((b < c) ? b : c);
+	if (b > a)
+	{
+		int tmp = a;
+		a = b;
+		b = tmp;
+	}
+	if (c > a)
+	{
+		int tm = a;
+		a = c;
+		c = tm;
+	}
+	if (c > b)
+	{
+		int tmp = b;
+		b = c;
+		c = tmp;
+	}
+	printf("从大到小的顺序为：%d %d %d", a, b, c);
+	return 0;
+}
