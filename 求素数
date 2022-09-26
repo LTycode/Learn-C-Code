@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int count = 0;
+	int j = 0;
+	//sqrt()-开平方的数学库函数
+	for (int i = 2; i <= 200; i++)
+	{
+		//求素数
+		//1.试除法
+		//1.1  2->i-1
+		for ( j = 2;j<sqrt(i);j++)// j < i; j++
+		{
+			if (i % j == 0)
+			{
+				break;
+			}
+		}
+		if (j>sqrt(i))//(i == j)
+		{
+			printf("%d ", i);
+			count++;
+		}
+	}
+	printf("\ncount= %d ", count);
+	return 0;
+}
