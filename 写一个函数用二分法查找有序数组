@@ -1,0 +1,37 @@
+#include<stdio.h>
+void my_find(int x,int right ,int* str)
+{
+	int left = 0;
+	int middle = 0;
+	while (left <= right)
+	{
+		middle = (right + left) / 2;
+		if (str[middle] > x)
+		{
+			right = middle - 1;
+		}
+		else if (str[middle] < x)
+		{
+			left = middle + 1;
+		}
+		else
+		{
+			printf("找到了，下标为%d", middle);
+			break;
+		}
+	}
+	if (left > right)
+	{
+		printf("找不到");
+	}
+}
+int main()
+{
+	int arr[] = { 2,34,56,67,78,89,90,99};
+	int sz = sizeof(arr) / sizeof(arr[0])-1;
+	printf("请输入要查找的数字:");
+	int num = 0;
+	scanf("%d", &num);
+	my_find(num,sz, arr);
+	return 0;
+}
