@@ -1,0 +1,20 @@
+#include<stdio.h>
+int fac(int x)
+{
+	if (x > 0)
+	{
+		return x * fac(x - 1);
+	}
+	else
+	{
+		return 1;
+	}
+}
+int main()
+{
+	int n = 0;
+	printf("请输入一个数:");
+	scanf("%d", &n);
+	printf("%d的阶乘为%d", n, fac(n));
+	return 0;
+}
