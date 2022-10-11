@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+	int a = 3;
+	int b = 5;
+	printf("before: a=%d b=%d\n", a, b);
+	a = a ^ b;
+	//011  3
+	//101  5
+	//110
+	b = a ^ b;
+	//110  
+	//101  5
+	//011  3
+	a = a ^ b;
+	//110
+	//011
+	//101  5
+	printf("after: a=%d b=%d\n", a, b);
+	return 0;
+}
