@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<stdlib.h>
+int com_int(const void* e1, const void* e2)
+{
+	return *(int*)e1 - *(int*)e2;//升序
+	return -(*(int*)e1 - *(int*)e2);//降序
+}
+int main()
+{
+	int arr[] = { 11,55,33,22,44,66,99,77,88 };
+	int sz = sizeof(arr) / sizeof(arr[0]);//数组长度
+	qsort(arr, sz, sizeof(arr[0]), com_int);
+	int i = 0;
+	//遍历数组
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d  ", arr[i]);
+	}
+	return 0;
+}
