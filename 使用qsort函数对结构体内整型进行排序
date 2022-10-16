@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct stu//创建结构体
+{
+	char name[20];
+	int age;
+};
+//结构体按年龄排升序排序
+int com_age(const void* e1, const void* e2)
+{
+	return ((struct stu*)e1)->age - ((struct stu*)e2)->age;//升序
+	//return -(((struct stu*)e1)->age - ((struct stu*)e2)->age);//降序
+	//return  (*(struct stu*)e1).age - (*(struct stu*)e2).age;//两种方式都是一样的
+}
+int main()
+{
+	struct stu s[] = { {"zhangsan",55},{"lisi",20},{"wangwu",30} };//创建结构体数组，顺便对其进行初始化
+	int sz1 = sizeof(s) / sizeof(s[0]);
+	qsort(s, sz1, sizeof(s[0]), com_age);//调用qsort函数
+	int i = 0;
+	for (i = 0; i < 3; i++)
+	{
+		printf("%s  %d \n", s[i].name, s[i].age);
+	}
+	return 0;
+}
