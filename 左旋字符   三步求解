@@ -1,0 +1,33 @@
+#include<stdio.h>
+void reserve(char* left, char* right)
+{
+	while (left<right)
+	{
+		char tmp = *left;
+		*left = *right;
+		*right = tmp;
+		left++;
+		right--;
+	}
+}
+void left_move(char* str,int  n)
+{
+	int len = strlen(str);
+	reserve(str, str+ n-1);
+	reserve(str + n, str + len - 1);
+	reserve(str, str + len - 1);
+}
+int main()
+{
+	int n = 0;
+	char arr1[] = "abcdef";
+	scanf("%d", &n);
+	left_move(arr1, n);
+	int i = 0;
+	int len = strlen(arr1);
+	for (i = 0; i < len; i++)
+	{
+		printf("%c ", arr1[i]);
+	}
+	return 0;
+}
