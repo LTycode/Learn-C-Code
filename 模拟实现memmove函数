@@ -1,0 +1,29 @@
+#include<stdio.h>
+void* my_memmove(void* des, const void* src, size_t num)
+{
+	void* ret = des;
+	if (des<src)
+	{
+
+		while (num--)
+		{
+			*(char*)des = *(char*)src;
+			++(char*)des;
+			++(char*)src;
+		}
+	}
+	else
+	{
+		while (num--)
+		{
+			*((char*)des+num) = *((char*)src+num) ;
+		}
+	}
+	return ret;
+}
+int main()
+{
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	my_memmove(arr+2 , arr, 20);
+	return 0;
+ }
