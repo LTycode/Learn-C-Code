@@ -1,0 +1,24 @@
+#include<stdio.h>
+char* my_strcat(char* dest, char* scr)
+{
+	char* ret = dest;
+	//找到dest‘\0’的位置
+	while (*dest != '\0')
+	{
+		dest++;
+	}
+	//把scr指向的拷贝到dest
+	while(*dest++ = *scr++)
+	{
+		;
+	}
+	return ret;
+}
+int main()
+{
+	char arr1[20] = "hello";
+	char arr2[] = "world";
+	my_strcat(arr1, arr2);
+	printf("%s", arr1);
+	return 0;
+}
