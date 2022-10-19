@@ -1,0 +1,40 @@
+#include<stdio.h>
+int my_strcmp(const char* str1, char* str2)
+{
+	while (*str1==*str2)
+	{
+		if (*str1 == '\0')
+		{
+			return 0;
+		}
+		str1++;
+		str2++;
+	}
+	if (*str1 > *str2)
+	{
+		return 1;//大于
+	}
+	else
+	{
+		return -1;//小于 
+	}
+}
+int main()
+{
+	char* p1 = "cbcd";
+	char* p2 = "abcd";
+	int ret=my_strcmp(p1, p2);
+	if (ret > 0)
+	{
+		printf("p1大于p2\n");
+	}
+	else if (ret < 0)
+	{
+		printf("p1小于p2\n");
+	}
+	else
+	{
+		printf("p1等于p2\n");
+	}
+  return 0：
+}
